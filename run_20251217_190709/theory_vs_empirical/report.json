@@ -1,0 +1,28 @@
+{
+  "d_k": 32,
+  "k_var_per_dim": 0.9664888535574553,
+  "kernel": "softmax",
+  "logit_sigma": 1.0172265990737324,
+  "mean_field": {
+    "bilinear_mats": 30,
+    "bilinear_seed": 456,
+    "mf_mats": 30,
+    "mf_rows": 20000,
+    "mf_seed": 123
+  },
+  "n_tokens": 64,
+  "notes": {
+    "entropy_rank_theory": "Computes two MC theory baselines: (1) i.i.d. Gaussian logits with sigma^2=q_var_per_dim*k_var_per_dim; (2) structured bilinear logits L=QK^T/sqrt(d_k) with Q,K Gaussian using observed per-dim variances. Both passed through softmax to estimate entropy/maxp/rank_eff.",
+    "logit_theory": "Assumes q and k are independent Gaussians; then logits are approx N(0, q_var_per_dim*k_var_per_dim).",
+    "tau_theory": "Assumes Q components are Gaussian with per-dim variance q_var_per_dim; then tau distribution is chi-based."
+  },
+  "outputs": {
+    "entropy_overlap": "runs\\run_20251217_190709\\theory_vs_empirical\\entropy_vs_alpha_overlap.png",
+    "logits_overlap": "runs\\run_20251217_190709\\theory_vs_empirical\\logits_overlap.png",
+    "peakedness_overlap": "runs\\run_20251217_190709\\theory_vs_empirical\\peakedness_vs_alpha_overlap.png",
+    "rankeff_overlap": "runs\\run_20251217_190709\\theory_vs_empirical\\rankeff_vs_alpha_overlap.png",
+    "tau_overlap": "runs\\run_20251217_190709\\theory_vs_empirical\\tau_overlap.png"
+  },
+  "q_var_per_dim": 1.0706279229754185,
+  "run_dir": "runs\\run_20251217_190709"
+}
